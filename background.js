@@ -34,7 +34,7 @@ moveBackground();
 function backColorChange() {
 var tStart = 400 // Start transition 100px from top
   , tEnd = 900   // End at 500px
-  , cStart = [157, 176, 209]
+  , cStart = [4, 95, 99]
   , cEnd = [184, 192, 172]
   , cDiff = [cEnd[0] - cStart[0], cEnd[1] - cStart[1], cEnd[2] - cStart[2]];
 
