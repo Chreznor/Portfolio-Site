@@ -38,12 +38,13 @@ z-index:-1;
   text-align: center;
 }
 
+
 .demo a {
 	position: absolute;
 	bottom: 20px;
 	left: 50%;
 	z-index: 2;
-  margin-left: -30px;
+    margin-left: -30px;
 	display: inline-block;
 	-webkit-transform: translate(0, -50%);
 	transform: translate(0, -50%);
@@ -105,7 +106,75 @@ z-index:-1;
   padding: 0;
   width: 100%;
    height: 100vh;
-   background-color: #9db0d1;
+   position: relative;
 }
 
-/*background-color: #EAEFD3;*/
+.photo {
+	transform: rotate(45deg);
+	border: 2px solid black;
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -200px 0 0 -200px;
+}
+
+#wolf-photo {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -100px 0 0 -100px;
+	transform: rotate(-45deg);
+}
+
+.third-page {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+   height: 100vh;
+   position: relative;
+}
+
+.photo2 {
+	transform: rotate(45deg);
+	border: 2px solid black;
+	overflow: hidden;
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -225px 0 0 -225px;
+}
+
+#wolf-photo2 {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -300px 0 0 -300px;
+	transform: rotate(-45deg);
+}
+
+@media only screen and (max-width: 800px) {
+
+#top-background-image {
+background: #080704;
+position: absolute;
+top:0;
+width:100%;
+z-index:-1;
+  height:100vh;
+  background-size: calc(100% + 50px);
+}
+.container {
+	margin: -100px 0 0 -100px;
+	width: 200px;
+    height:150px;
+}
+
+.container h1, h2 {
+	font-size: 50%;
+}
+
+}
