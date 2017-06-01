@@ -143,6 +143,11 @@ z-index:-1;
 	margin: -200px 0 0 -200px;
 }
 
+.photo:hover {
+	transform: rotate(405deg);
+	transition: transform 2s ease-out;
+}
+
 #wolf-photo {
 	position: absolute;
 	left: 50%;
@@ -152,7 +157,7 @@ z-index:-1;
 }
 
 #wolf-photo:hover {
-	transform: rotate(-405deg);
+	transform: rotate(-765deg);
 	transition: transform 2s ease-out;
 }
 
