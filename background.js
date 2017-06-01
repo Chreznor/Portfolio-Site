@@ -32,7 +32,7 @@ $(window).on('mousemove click', function(e) {
 moveBackground();
 
 var tStart = 100 // Start transition 100px from top
-  , tEnd = 500   // End at 500px
+  , tEnd = 800   // End at 500px
   , cStart = [157, 176, 209]
   , cEnd = [220, 224, 197]
   , cDiff = [cEnd[0] - cStart[0], cEnd[1] - cStart[1], cEnd[1] - cStart[0]];
