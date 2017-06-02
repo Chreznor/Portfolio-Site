@@ -68,3 +68,22 @@ $(document).ready(function(){
 };
 
 backColorChange2()
+
+function backColorChange3() {
+var tStart = 2400 // Start transition 100px from top
+  , tEnd = 2900   // End at 500px
+  , cStart = [255, 86, 15]
+  , cEnd = [46, 42, 170]
+  , cDiff = [cEnd[0] - cStart[0], cEnd[1] - cStart[1], cEnd[2] - cStart[2]];
+
+$(document).ready(function(){
+    $(document).scroll(function() {
+        var p = ($(this).scrollTop() - tStart) / (tEnd - tStart); // % of transition
+        p = Math.min(1, Math.max(0, p)); // Clamp to [0, 1]
+        var cBg = [Math.round(cStart[0] + cDiff[0] * p), Math.round(cStart[1] + cDiff[1] * p), Math.round(cStart[2] + cDiff[2] * p)];
+        $(".fourth-page").css('background-color', 'rgb(' + cBg.join(',') +')');
+    });
+});
+};
+
+backColorChange3()

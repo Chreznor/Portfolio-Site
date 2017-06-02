@@ -132,6 +132,24 @@ z-index:-1;
    background-color: rgb(184, 192, 172);
 }
 
+.title {
+    display: block;
+    width: 100px;
+    height: 50px;
+    top: 40%;
+    margin: -25px 0 0 -50px;
+    left: 35%;
+    position: absolute;
+    font-family: Barrio;
+    font-size: 40px;
+    transform: rotate(-45deg);
+}
+
+.title:hover {
+  color: white;
+  transition: color 2s;
+}
+
 .photo {
 	transform: rotate(45deg);
 	border: 2px solid black;
@@ -195,21 +213,74 @@ z-index:-1;
 	transition: transform 2s ease-out;
 }
 
+.fourth-page {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+   height: 100vh;
+   position: relative;
+   background-color: rgb(46, 42, 170);
+}
+
+.photo3 {
+	transform: rotate(45deg);
+	border: 2px solid black;
+	overflow: hidden;
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -225px 0 0 -225px;
+}
+
+#fish-photo {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -300px 0 0 -300px;
+	transform: rotate(-45deg);
+}
+
+#fish-photo:hover {
+	transform: rotate(765deg);
+	transition: transform 4s ease;
+}
+
+.footer {
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  margin: -20px 0 0 -100px;
+}
+
+.footer p a {
+	font-size: 30px;
+	margin: 0 5px;
+	color: rgb(184, 192, 172);
+}
+.footer p a i:hover {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
 @media only screen and (max-width: 800px) {
 
 #top-background-image {
-background: #080704;
-position: absolute;
-top:0;
-width:100%;
-z-index:-1;
+  background: #080704;
+  position: absolute;
+  top:0;
+  width:100%;
+  z-index:-1;
   height:100vh;
   background-size: calc(100% + 50px);
 }
 .container {
 	margin: -100px 0 0 -100px;
 	width: 200px;
-    height:150px;
+  height:150px;
 }
 
 .container h1, h2 {
