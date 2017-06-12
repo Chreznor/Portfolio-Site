@@ -2,6 +2,7 @@ html, body {
   overflow-x: hidden;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .first-page {
@@ -172,6 +173,98 @@ section.active {}
    height: 100vh;
    position: relative;
    background-color: rgb(184, 192, 172);
+   white-space: nowrap;
+}
+
+.wrapper {
+  z-index: 2;
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -300px 0 0 -300px;
+  cursor: pointer;
+}
+
+.left-side-container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 50%;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+
+.center-container {
+  margin: 0;
+  padding: 0;
+  width: 0;
+  height: 100vh;
+  position: relative;
+  background-size: 1200px 1400px;
+  background-image: url(hiddenwolf.jpg);
+  background-position: left -580px bottom -53px;
+  display: inline-block;
+}
+
+.right-side-container {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: inline-block;
+  width: 48%;
+  overflow: hidden;
+  position: relative;
+  left: -10px;
+}
+
+.border-left {
+  top: 50%;
+  left: 100%;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  margin: -200px 0 0 -200px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  transform: rotate(45deg);
+}
+
+.border-right {
+  top: 50%;
+  right: 100%;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  margin: -200px -200px 0 0;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  transform: rotate(45deg);
+}
+
+#word-left{
+    top: 64%;
+    margin: -25px 0 0 -50px;
+    left: 36%;
+    position: absolute;
+}
+
+#word-right{
+    top: 39%;
+    margin: -25px -50px 0 0;
+    right: 39%;
+    position: absolute;
+}
+
+#word-left, #word-right {
+    display: block;
+    width: 100px;
+    height: 50px;
+    font-family: Barrio;
+    font-size: 40px;
+    transform: rotate(-45deg);
 }
 
 .title {

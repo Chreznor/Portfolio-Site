@@ -107,4 +107,54 @@ $(window).on('scroll', function () {
       nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
     }
   });
+})
+
+$(document).ready(function(){
+  $(".wrapper").mouseenter(function(){
+    $('.center-container').animate({width: "300px", left: "-154px"}, 500);
+    $('.center-container').css("left", "-154px");
+    $('.left-side-container').animate({left: "-150px"}, 500);
+    $('.right-side-container').animate({left: "-158px"}, 500);
+    $('#word-left, #word-right').css("color", "#b8c0ac");
+    $('.border-left, .border-right').css("background-color", "black");
+    $('.wrapper').css({'width': '800px', "margin": "-300px 0 0 -400px"});
+
+  });
+  $(".wrapper").mouseleave(function(){
+    $('.center-container').animate({width: "0", left: "0"}, 500);
+    $('.center-container').css("left", "0");
+    $('.left-side-container').animate({left: "0"}, 500);
+    $('.right-side-container').animate({left: "-8"}, 500);
+    $('#word-left, #word-right').css("color", "black");
+    $('.border-left, .border-right').css("background-color", "#b8c0ac");
+    $('.wrapper').css({'width': '600px', "margin": "-300px 0 0 -300px"});
+
+  });
+  $(".wrapper").click(function(){
+    $('.center-container').animate({width: "60%", left: "-30%"}, 500);
+    $('.center-container').css("left", "-30%");
+    $('.left-side-container').animate({left: "-29.75%"}, 500);
+    $('.right-side-container').animate({left: "-30.25%"}, 500);
+    $('#word-left, #word-right').css("color", "#b8c0ac");
+    $('.border-left, .border-right').css("background-color", "black");
+    $('.wrapper').css({'width': '90%', "margin": "-300px 0 0 -45%"});
+  });
 });
+
+
+
+
+// $(document).ready(function(){
+//   $("#word-left, #word-right").click(function(){
+//     $('.center-container').animate({width: "300px", left: "-154px"}, 500);
+//     $('.center-container').css("left", "-154px");
+//     $('.left-side-container').animate({left: "-150px"}, 500);
+//     $('.right-side-container').animate({left: "-156px"}, 500);
+//   });
+//   $("#word-left, #word-right").click(function(){
+//     $('.center-container').animate({width: "0", left: "0"}, 500);
+//     $('.center-container').css("left", "0");
+//     $('.left-side-container').animate({left: "0"}, 500);
+//     $('.right-side-container').animate({left: "-0"}, 500);
+//   });
+// });
