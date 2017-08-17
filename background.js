@@ -109,49 +109,87 @@ $(window).on('scroll', function () {
   });
 })
 
-$(document).ready(function(){
-  $(".wrapper").mouseenter(function(){
-    $('.center-container').animate({width: "300px", left: "-154px"}, 500);
-    $('.center-container').css("left", "-154px");
-    $('.left-side-container').animate({left: "-150px"}, 500);
-    $('.right-side-container').animate({left: "-158px"}, 500);
-    $('#word-left, #word-right').css("color", "#b8c0ac");
-    $('.border-left, .border-right').css("background-color", "black");
-    $('.wrapper').css({'width': '800px', "margin": "-300px 0 0 -400px"});
+const centerContainer = document.querySelector('.center-container');
+const leftSideContainer = document.querySelector('.left-side-container');
+const rightSideContainer = document.querySelector('.right-side-container');
+const wrapper = document.querySelector('.wrapper');
 
-  });
-  $(".wrapper").mouseleave(function(){
-    $('.center-container').animate({width: "0", left: "0"}, 500);
-    $('.center-container').css("left", "0");
-    $('.left-side-container').animate({left: "0"}, 500);
-    $('.right-side-container').animate({left: "-8"}, 500);
-    $('#word-left, #word-right').css("color", "black");
-    $('.border-left, .border-right').css("background-color", "#b8c0ac");
-    $('.wrapper').css({'width': '600px', "margin": "-300px 0 0 -300px"});
+function actAnim() {
+  rightSideContainer.classList.add('opening-right');
+  leftSideContainer.classList.add('opening-left');
+  centerContainer.classList.add('center-container-widen');
+  document.querySelector('.border-left').style.backgroundColor = 'black';
+  document.querySelector('.border-right').style.backgroundColor = 'black';
+  document.querySelector('#word-left').style.color = '#b8c0ac';
+  document.querySelector('#word-right').style.color = '#b8c0ac';
+}
 
-  });
-  $(".wrapper").click(function(){
-    $('.center-container').animate({width: "60%", left: "-30%"}, 500);
-    $('.center-container').css("left", "-30%");
-    $('.left-side-container').animate({left: "-29.75%"}, 500);
-    $('.right-side-container').animate({left: "-30.25%"}, 500);
-    $('#word-left, #word-right').css("color", "#b8c0ac");
-    $('.border-left, .border-right').css("background-color", "black");
-    $('.wrapper').css({'width': '90%', "margin": "-300px 0 0 -45%"});
-  });
-});
+function deactAnim() {
+  rightSideContainer.classList.remove('opening-right');
+  leftSideContainer.classList.remove('opening-left');
+  centerContainer.classList.remove('center-container-widen');
+  document.querySelector('.border-left').style.backgroundColor = '#b8c0ac';
+  document.querySelector('.border-right').style.backgroundColor = '#b8c0ac';
+  document.querySelector('#word-left').style.color = 'black';
+  document.querySelector('#word-right').style.color = 'black';
+}
+
+function toggleAnim() {
+  rightSideContainer.classList.toggle('open-right');
+  leftSideContainer.classList.toggle('open-left');
+  centerContainer.classList.toggle('center-container-widenned');
+  wrapper.classList.toggle('wrapper-width');
+}
+
+
+wrapper.addEventListener('mouseenter', actAnim);
+wrapper.addEventListener('mouseleave', deactAnim);
+wrapper.addEventListener('click', toggleAnim);
+
+
+// $(document).ready(function(){
+//   $(".wrapper").mouseenter(function(){
+//     $('.center-container').animate({width: "300px", left: "-154px"}, 500);
+//     $('.center-container').css("left", "-154px");
+//     $('.left-side-container').animate({left: "-150px"}, 500);
+//     $('.right-side-container').animate({left: "-158px"}, 500);
+//     $('#word-left, #word-right').css("color", "#b8c0ac");
+//     $('.border-left, .border-right').css("background-color", "black");
+//     $('.wrapper').css({'width': '800px', "margin": "-300px 0 0 -400px"});
+
+//   });
+//   $(".wrapper").mouseleave(function(){
+//     $('.center-container').animate({width: "0", left: "0"}, 500);
+//     $('.center-container').css("left", "0");
+//     $('.left-side-container').animate({left: "0"}, 500);
+//     $('.right-side-container').animate({left: "-8"}, 500);
+//     $('#word-left, #word-right').css("color", "black");
+//     $('.border-left, .border-right').css("background-color", "#b8c0ac");
+//     $('.wrapper').css({'width': '600px', "margin": "-300px 0 0 -300px"});
+
+//   });
+//   $(".wrapper").click(function(){
+//     $('.center-container').animate({width: "60%", left: "-30%"}, 500);
+//     $('.center-container').css("left", "-30%");
+//     $('.left-side-container').animate({left: "-29.75%"}, 500);
+//     $('.right-side-container').animate({left: "-30.25%"}, 500);
+//     $('#word-left, #word-right').css("color", "#b8c0ac");
+//     $('.border-left, .border-right').css("background-color", "black");
+//     $('.wrapper').css({'width': '90%', "margin": "-300px 0 0 -45%"});
+//   });
+// });
 
 
 
 
 // $(document).ready(function(){
-//   $("#word-left, #word-right").click(function(){
+//   $(".wrapper, #word-right").click(function(){
 //     $('.center-container').animate({width: "300px", left: "-154px"}, 500);
 //     $('.center-container').css("left", "-154px");
 //     $('.left-side-container').animate({left: "-150px"}, 500);
 //     $('.right-side-container').animate({left: "-156px"}, 500);
 //   });
-//   $("#word-left, #word-right").click(function(){
+//   $(".wrapper, #word-right").click(function(){
 //     $('.center-container').animate({width: "0", left: "0"}, 500);
 //     $('.center-container').css("left", "0");
 //     $('.left-side-container').animate({left: "0"}, 500);
