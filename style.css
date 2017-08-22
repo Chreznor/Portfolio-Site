@@ -3,6 +3,7 @@ html, body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Barrio;
 }
 
 .first-page {
@@ -11,11 +12,11 @@ html, body {
 }
 
 #top-background-image {
-background:url('forest.jpg') -25px -50px;
-position: absolute ;
-top:0;
-width:100%;
-z-index:-1;
+  background:url('forest.jpg') -25px -50px;
+  position: absolute ;
+  top:0;
+  width:100%;
+  z-index:-1;
   height:100vh;
   background-size: calc(100% + 50px);
 }
@@ -38,10 +39,6 @@ z-index:-1;
   border-radius: 20px;
   text-align: center;
   box-shadow: 0px 16px 30px;
-}
-
-.container h1, h2 {
-	font-family: Barrio;
 }
 
 .container h1 {
@@ -158,8 +155,8 @@ nav ul li a:hover {
 }
 a.active {
   border: 2px solid #ecf0f1;
-  border-radius: 50%;
-  padding: 0px 1px;
+  border-radius: 100%;
+  padding: 0px 2px;
 }
 
 section.active {}
@@ -174,17 +171,6 @@ section.active {}
    position: relative;
    background-color: rgb(184, 192, 172);
    white-space: nowrap;
-}
-
-.wrapper {
-  z-index: 2;
-  width: 600px;
-  height: 600px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: -300px 0 0 -300px;
-  cursor: pointer;
 }
 
 .wrapper-width {
@@ -208,14 +194,17 @@ section.active {}
   margin: 0;
   padding: 0;
   width: 0;
-  height: 100vh;
+  top: -10vh;
+  height: 80vh;
   position: relative;
-  background-size: 1200px 1400px;
-  background-image: url(hiddenwolf.jpg);
-  background-position: left -580px bottom -53px;
   display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  background-color: rgb(184, 192, 172);
+  border-radius: 10px;
   transition: 0.8s;
 }
+
 
 .right-side-container {
   margin: 0;
@@ -229,6 +218,39 @@ section.active {}
   transition: 0.8s;
 }
 
+
+.center-container img {
+  margin-top: 40px;
+  box-shadow: 1px 1px 1px black;
+  border-radius: 3px;
+}
+
+.center-container .text-wrapper {
+  overflow-x: hidden;
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.center-container .text-wrapper p {
+  word-break: break-all;
+  white-space: normal;
+}
+
+.center-container-widen {
+  width: 300px;
+  transform: translate(-154px);
+  transition: 0.8s;
+  border: 1px solid black;
+}
+
+.center-container-widenned {
+  width: 800px;
+  transform: translate(-400px);
+  transition: 1.3s cubic-bezier(.29,1.83,1,1.21);
+  border: 1px solid black;
+}
+
 .opening-left {
   transform: translate(-150px);
   transition: 0.8s;
@@ -239,27 +261,17 @@ section.active {}
   transition: 0.8s;
 }
 
-.center-container-widen {
-  width: 300px;
-  transform: translate(-154px);
-  transition: 0.8s;
-}
+
 
 .open-left {
   /*transform: translate(-29.75%);*/
   transform: translate(-396px);
-  transition: 0.8s;
+  transition: 1.3s cubic-bezier(.29,1.83,1,1.21);
 }
 
 .open-right {
   transform: translate(-394px);
-  transition: 0.8s;
-}
-
-.center-container-widenned {
-  width: 800px;
-  transform: translate(-400px);
-  transition: 0.8s;
+  transition: 1.3s cubic-bezier(.29,1.83,1,1.21);
 }
 
 .border-left {
@@ -272,6 +284,7 @@ section.active {}
   border-bottom: 1px solid black;
   border-left: 1px solid black;
   transform: rotate(45deg);
+  cursor: pointer;
 }
 
 .border-right {
@@ -284,6 +297,12 @@ section.active {}
   border-top: 1px solid black;
   border-right: 1px solid black;
   transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.border-color-toggle + #word-left + #word-rigth{
+  background-color: black;
+  color: #b8c0ac;
 }
 
 #word-left{
@@ -304,7 +323,6 @@ section.active {}
     display: block;
     width: 100px;
     height: 50px;
-    font-family: Barrio;
     font-size: 40px;
     transform: rotate(-45deg);
 }
@@ -317,7 +335,6 @@ section.active {}
     margin: -25px 0 0 -50px;
     left: 35%;
     position: absolute;
-    font-family: Barrio;
     font-size: 40px;
     transform: rotate(-45deg);
 }
