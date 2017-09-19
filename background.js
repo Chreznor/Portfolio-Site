@@ -32,7 +32,7 @@ $(window).on('mousemove click', function(e) {
 
 moveBackground();
 
-//CHANING BACKGROUND COLOR ON SCROLL ANIMATION
+//CHANGING BACKGROUND COLOR ON SCROLL ANIMATION
 
 
 function backColorChange() {
@@ -40,7 +40,7 @@ function backColorChange() {
   const sectionVal1 = section1.getBoundingClientRect();
   console.log(sectionVal1.top + window.scrollY, sectionVal1.bottom + window.scrollY);
   var tStart = sectionVal1.top + window.scrollY - sectionVal1.height// Start transition 100px from top 400
-  , tEnd = sectionVal1.top + window.scrollY  // End at 500px 900 
+  , tEnd = sectionVal1.top + window.scrollY  // End at 500px 900
   , cStart = [4, 95, 99]
   , cEnd = [184, 192, 172]
   , cDiff = [cEnd[0] - cStart[0], cEnd[1] - cStart[1], cEnd[2] - cStart[2]];
@@ -84,7 +84,7 @@ backColorChange2();
 function backColorChange3() {
   const section3 = document.getElementById('3');
   const sectionVal3 = section3.getBoundingClientRect();
-  console.log(sectionVal3.top + window.scrollY, sectionVal3.bottom + window.scrollY);
+  //console.log(sectionVal3.top + window.scrollY, sectionVal3.bottom + window.scrollY);
   var tStart = sectionVal3.top + window.scrollY - sectionVal3.height// Start transition 100px from top 2400
   , tEnd = sectionVal3.top + window.scrollY // End at 500px 2900
   , cStart = [255, 86, 15]
@@ -158,7 +158,7 @@ function deactAnim() {
   } else {
     return;
   }
-  
+
 }
 
 function toggleAnim() {
@@ -173,52 +173,49 @@ animEl.forEach(elem => elem.addEventListener('mouseenter', actAnim));
 animEl.forEach(elem => elem.addEventListener('mouseleave', deactAnim));
 animEl.forEach(elem => elem.addEventListener('click', toggleAnim));
 
-// $(document).ready(function(){
-//   $(".wrapper").mouseenter(function(){
-//     $('.center-container').animate({width: "300px", left: "-154px"}, 500);
-//     $('.center-container').css("left", "-154px");
-//     $('.left-side-container').animate({left: "-150px"}, 500);
-//     $('.right-side-container').animate({left: "-158px"}, 500);
-//     $('#word-left, #word-right').css("color", "#b8c0ac");
-//     $('.border-left, .border-right').css("background-color", "black");
-//     $('.wrapper').css({'width': '800px', "margin": "-300px 0 0 -400px"});
+//SECTION 2 ANIMATION this is a really bad solution.. I'll have to fix this later
 
-//   });
-//   $(".wrapper").mouseleave(function(){
-//     $('.center-container').animate({width: "0", left: "0"}, 500);
-//     $('.center-container').css("left", "0");
-//     $('.left-side-container').animate({left: "0"}, 500);
-//     $('.right-side-container').animate({left: "-8"}, 500);
-//     $('#word-left, #word-right').css("color", "black");
-//     $('.border-left, .border-right').css("background-color", "#b8c0ac");
-//     $('.wrapper').css({'width': '600px', "margin": "-300px 0 0 -300px"});
+const centerContainer2 = document.querySelector('.center-container2');
+const leftSideContainer2 = document.querySelector('.left-side-container2');
+const rightSideContainer2 = document.querySelector('.right-side-container2');
+const borderLeft2 = document.querySelector('.border-left2');
+const borderRight2 = document.querySelector('.border-right2');
+const animEl2 = [borderLeft2, borderRight2, centerContainer2];
+let animState2 = false;
 
-//   });
-//   $(".wrapper").click(function(){
-//     $('.center-container').animate({width: "60%", left: "-30%"}, 500);
-//     $('.center-container').css("left", "-30%");
-//     $('.left-side-container').animate({left: "-29.75%"}, 500);
-//     $('.right-side-container').animate({left: "-30.25%"}, 500);
-//     $('#word-left, #word-right').css("color", "#b8c0ac");
-//     $('.border-left, .border-right').css("background-color", "black");
-//     $('.wrapper').css({'width': '90%', "margin": "-300px 0 0 -45%"});
-//   });
-// });
+function actAnim2() {
+  rightSideContainer2.classList.add('opening-right2');
+  leftSideContainer2.classList.add('opening-left2');
+  centerContainer2.classList.add('center-container-widen2');
+  document.querySelector('.border-left2').style.backgroundColor = 'black';
+  document.querySelector('.border-right2').style.backgroundColor = 'black';
+  document.querySelector('#word-left2').style.color = '#b8c0ac';
+  document.querySelector('#word-right2').style.color = '#b8c0ac';
+}
 
+function deactAnim2() {
+  rightSideContainer2.classList.remove('opening-right2');
+  leftSideContainer2.classList.remove('opening-left2');
+  centerContainer2.classList.remove('center-container-widen2');
+  if (animState2 === false) {
+    document.querySelector('.border-left2').style.backgroundColor = 'rgb(255, 86, 15)';
+    document.querySelector('.border-right2').style.backgroundColor = 'rgb(255, 86, 15)';
+    document.querySelector('#word-left2').style.color = 'black';
+    document.querySelector('#word-right2').style.color = 'black';
+  } else {
+    return;
+  }
 
+}
 
+function toggleAnim2() {
+  rightSideContainer2.classList.toggle('open-right2');
+  leftSideContainer2.classList.toggle('open-left2');
+  centerContainer2.classList.toggle('center-container-widenned2');
+  [borderLeft2, borderRight2].forEach(elem => elem.classList.toggle('border-color-toggle2'));
+  animState2 = !animState2;
+}
 
-// $(document).ready(function(){
-//   $(".wrapper, #word-right").click(function(){
-//     $('.center-container').animate({width: "300px", left: "-154px"}, 500);
-//     $('.center-container').css("left", "-154px");
-//     $('.left-side-container').animate({left: "-150px"}, 500);
-//     $('.right-side-container').animate({left: "-156px"}, 500);
-//   });
-//   $(".wrapper, #word-right").click(function(){
-//     $('.center-container').animate({width: "0", left: "0"}, 500);
-//     $('.center-container').css("left", "0");
-//     $('.left-side-container').animate({left: "0"}, 500);
-//     $('.right-side-container').animate({left: "-0"}, 500);
-//   });
-// });
+animEl2.forEach(elem => elem.addEventListener('mouseenter', actAnim2));
+animEl2.forEach(elem => elem.addEventListener('mouseleave', deactAnim2));
+animEl2.forEach(elem => elem.addEventListener('click', toggleAnim2));
